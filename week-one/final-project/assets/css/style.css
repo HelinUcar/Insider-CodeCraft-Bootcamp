@@ -490,7 +490,6 @@ select {
   padding-top: 80px;
 }
 
-/* Flex container: video ve açıklamanın yan yana gelmesi */
 .favorite-container {
   display: flex;
   align-items: center;
