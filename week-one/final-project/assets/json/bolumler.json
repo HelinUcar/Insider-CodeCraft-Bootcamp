@@ -1,0 +1,136 @@
+{
+  "friends": {
+    "seasons": [
+      {
+        "season": 1,
+        "episodes": [
+          {
+            "episodeNumber": 1,
+            "episodeName": "The One Where Monica Gets a Roommate",
+            "episodeDesc": "Rachel, düğününden kaçarak Central Perk’e gelir ve yeni bir hayat kurmak için Monica’nın yanına taşınır. Ross ise eski karısının onu terk etmesiyle başa çıkmaya çalışır.",
+            "image": "assets/images/seasons/season1_1.jpg"
+          },
+          {
+            "episodeNumber": 2,
+            "episodeName": "The One with the Sonogram at the End",
+            "episodeDesc": "Ross, eski eşi Carol’ın hamile olduğunu öğrenir ve bebek için en iyi kararı vermeye çalışır. Rachel ise nişan yüzüğünü iade etmeye çalışırken eski nişanlısıyla karşılaşır.",
+            "image": "assets/images/seasons/season1_2.jpg"
+          },
+          {
+            "episodeNumber": 3,
+            "episodeName": "The One with the Thumb",
+            "episodeDesc": "Phoebe, banka hesabına yanlışlıkla yatırılan büyük bir miktar parayı bağışlamaya çalışırken beklenmedik bir sürprizle karşılaşır. Chandler ise sigarayı bırakmakta zorlanır.",
+            "image": "assets/images/seasons/season1_3.jpg"
+          },
+          {
+            "episodeNumber": 4,
+            "episodeName": "The One With George Stephanopoulos",
+            "episodeDesc": "Kızlar, Rachel’ın eski hayatını sorgularken bir kız gecesi yapar. Erkekler ise spor karşılaşması izlerken hayatları hakkında derin bir sohbete dalarlar.",
+            "image": "assets/images/seasons/season1_4.jpg"
+          },
+          {
+            "episodeNumber": 5,
+            "episodeName": "The One with the East German Laundry Detergent",
+            "episodeDesc": "Ross, Rachel’a çamaşır yıkamayı öğretirken ona karşı duygularını açığa vurmaya başlar. Joey ise eski sevgilisini geri kazanmak için bir oyun oynar.",
+            "image": "assets/images/seasons/season1_5.jpg"
+          },
+          {
+            "episodeNumber": 6,
+            "episodeName": "The One with the Butt",
+            "episodeDesc": "Joey, bir filmde Al Pacino’nun dublörü olarak rol alır ancak büyük bir hayal kırıklığına uğrar. Chandler, yeni kız arkadaşıyla mükemmel bir ilişkiye sahip olup olmadığını sorgular.",
+            "image": "assets/images/seasons/season1_6.jpg"
+          },
+          {
+            "episodeNumber": 7,
+            "episodeName": "The One with the Blackout",
+            "episodeDesc": "New York’ta büyük bir elektrik kesintisi yaşanır. Ross, Rachel’a duygularını açmaya çalışırken Monica’nın eski bir arkadaşı da gruba katılır.",
+            "image": "assets/images/seasons/season1_7.jpg"
+          },
+          {
+            "episodeNumber": 8,
+            "episodeName": "The One Where Nana Dies Twice",
+            "episodeDesc": "Ross ve Monica, büyükannelerinin kaybıyla uğraşırken aileleriyle eski anıları paylaşırlar. Chandler ise iş yerinde herkesin onu eşcinsel sanmasından dolayı şaşkındır.",
+            "image": "assets/images/seasons/season1_8.jpg"
+          },
+          {
+            "episodeNumber": 9,
+            "episodeName": "The One Where Underdog Gets Away",
+            "episodeDesc": "Şükran Günü’nde grup, büyük yemek planları yaparken çatıya sıkışan bir balon nedeniyle apartmana geri dönemeyince aç kalma tehlikesiyle karşı karşıya kalır.",
+            "image": "assets/images/seasons/season1_9.jpg"
+          },
+          {
+            "episodeNumber": 10,
+            "episodeName": "The One with the Monkey",
+            "episodeDesc": "Ross, yalnız hissettiği için Marcel adında bir maymun sahiplenir. Grup yılbaşı gecesi için sözler verir ancak gece hiç bekledikleri gibi geçmez.",
+            "image": "assets/images/seasons/season1_10.jpg"
+          }
+        ]
+      },
+      {
+        "season": 2,
+        "episodes": [
+          {
+            "episodeNumber": 1,
+            "episodeName": "The One with Ross's New Girlfriend",
+            "episodeDesc": "Ross, Çin’den yeni sevgilisi Julie ile döner. Rachel, Ross’a olan hisleriyle yüzleşirken, Monica Chandler’ın önerdiği tuhaf bir saç kesimi yapar.",
+            "image": "assets/images/seasons/season2_1.jpg"
+          },
+          {
+            "episodeNumber": 2,
+            "episodeName": "The One with the Breast Milk",
+            "episodeDesc": "Joey ve Chandler, Carol’ın bebeği Ben’e anne sütü vermesinden rahatsız olur. Rachel ve Julie arkadaş olmaya başlar, bu durum Ross’un kafasını karıştırır.",
+            "image": "assets/images/seasons/season2_2.jpg"
+          },
+          {
+            "episodeNumber": 3,
+            "episodeName": "The One Where Heckles Dies",
+            "episodeDesc": "Alt kattaki Bay Heckles vefat eder ve eşyaları Monica ile Rachel’a kalır. Chandler, Heckles ile benzerliklerini fark edip yalnız kalacağı korkusuna kapılır.",
+            "image": "assets/images/seasons/season2_3.jpg"
+          },
+          {
+            "episodeNumber": 4,
+            "episodeName": "The One with Phoebe's Husband",
+            "episodeDesc": "Phoebe’nin sırları ortaya çıkar: Yeşil kart alması için evlendiği kocası Duncan, aslında gay olmadığını açıklayarak boşanmak ister. Ross, Rachel’a karşı duygularıyla mücadele eder.",
+            "image": "assets/images/seasons/season2_4.jpg"
+          },
+          {
+            "episodeNumber": 5,
+            "episodeName": "The One with Five Steaks and an Eggplant",
+            "episodeDesc": "Grup içinde maddi farklılıklar belirginleşir. Joey, Phoebe ve Rachel’ın düşük gelirleri nedeniyle, Monica ve Chandler’ın lüks harcamalarına karşı tepki göstermeleri gerilime yol açar.",
+            "image": "assets/images/seasons/season2_5.jpg"
+          },
+          {
+            "episodeNumber": 6,
+            "episodeName": "The One with the Baby on the Bus",
+            "episodeDesc": "Joey ve Chandler, Ben’e bakıcılık yaparken otobüste unutur! Ross bebeğini geri almak için çabalar. Phoebe ise Central Perk’te şarkı söyleme fırsatını kaçırır.",
+            "image": "assets/images/seasons/season2_6.jpg"
+          },
+          {
+            "episodeNumber": 7,
+            "episodeName": "The One Where Ross Finds Out",
+            "episodeDesc": "Rachel, Ross’a duyduğu aşkı fark eder ancak Ross, Julie ile birliktedir. Chandler, sigarayı bırakmaya çalışır. Rachel ve Ross’un duygusal yüzleşmesi unutulmaz olur.",
+            "image": "assets/images/seasons/season2_7.jpg"
+          },
+          {
+            "episodeNumber": 8,
+            "episodeName": "The One with the List",
+            "episodeDesc": "Ross, Julie ve Rachel arasında karar vermekte zorlanır ve Chandler ile Joey’den yardım ister. Ancak, Rachel için hazırlanmış kusur listesi ortalığı karıştırır.",
+            "image": "assets/images/seasons/season2_8.jpg"
+          },
+          {
+            "episodeNumber": 9,
+            "episodeName": "The One with Phoebe's Dad",
+            "episodeDesc": "Phoebe, babasıyla tanışmaya karar verir ancak cesaret edemez. Ross, Rachel’a hediye almak ister ancak hatalı bir seçim yapar. Monica maddi sıkıntılarla mücadele eder.",
+            "image": "assets/images/seasons/season2_9.jpg"
+          },
+          {
+            "episodeNumber": 10,
+            "episodeName": "The One with Russ",
+            "episodeDesc": "Rachel, Ross’a benzeyen bir adamla (Russ) çıkmaya başlar ancak farkı uzun süre anlamaz. Joey, bir oyunculuk rolü almak için isim değişikliğini düşünür.",
+            "image": "assets/images/seasons/season2_10.jpg"
+          }
+        ]
+      }
+    ]
+  }
+}

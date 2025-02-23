@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="Friends Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">anasayfa</a></li>
+                <li><a href="#characters">karakterler</a></li>
+                <li><a href="#episodes">bölümler</a></li>
+                <li><a href="#favorite-scene">favori sahne</a></li>
+            </ul>
+            <div class="profile-icon">
+                <img src="assets/images/user.png" alt="Profile Icon">
+            </div>
+            <div class="hamburger-menu">
+                <div class="menu-icon" onclick="toggleMenu()"></div>
+                <div class="menu-overlay" id="menu-overlay">
+                    <div class="menu">
+                        <span class="close-button" onclick="toggleMenu()">&times;</span>
+                        <a href="#home">anasayfa</a>
+                        <a href="#characters">karakterler</a>
+                        <a href="#episodes">bölümler</a>
+                        <a href="#favorite-scene">
+                            favori sahne</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <div class="home-content">
+                <div class="poster-img">
+                    <img src="assets/images/poster.png" alt="Friends Poster" class="poster-1">
+                    <img src="assets/images/poster.jpeg" alt="Friends Poster" class="poster-2">
+                </div>
+                <div class="poster-detail">
+                    <a href="https://www.imdb.com/title/tt0108778/" target="_blank" class="imdb-link">
+                        <h1>friends</h1>
+                    </a>
+                    <p>Friends, New York'ta yaşayan altı yakın arkadaşın hayatlarını, dostluklarını, aşklarını ve
+                        kariyer
+                        mücadelelerini eğlenceli ve duygusal bir şekilde anlatan ikonik bir sitcomdur. Monica, Ross,
+                        Rachel,
+                        Chandler, Joey ve Phoebe'nin günlük yaşantıları, Central Perk’te kahve içerken başlayan komik ve
+                        unutulmaz anlarla doludur. Dizinin sıcak atmosferi, güçlü karakter dinamikleri ve mizahi
+                        diyalogları, onu tüm zamanların en sevilen dizilerinden biri yapmıştır. </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="characters">
+            <h2 class="section-title">karakterler</h2>
+            <div class="charachter-container">
+                <div class="character-card" data-realname="Rachel">
+                    <img src="assets/images/characters/rachel.png" alt="Rachel Green">
+                    <h3>Rachel Green</h3>
+                </div>
+                <div class="character-card" data-realname="Ross">
+                    <img src="assets/images/characters/ross.png" alt="Ross Geller">
+                    <h3>Ross Geller</h3>
+                </div>
+                <div class="character-card" data-realname="Monica">
+                    <img src="assets/images/characters/monica.png" alt="Monica Geller">
+                    <h3>Monica Geller</h3>
+                </div>
+                <div class="character-card" data-realname="Chandler">
+                    <img src="assets/images/characters/chandler.png" alt="Chandler Bing">
+                    <h3>Chandler Bing</h3>
+                </div>
+                <div class="character-card" data-realname="Joey">
+                    <img src="assets/images/characters/joey.png" alt="Joey Tribbiani">
+                    <h3>Joey Tribbiani</h3>
+                </div>
+                <div class="character-card" data-realname="Phoebe">
+                    <img src="assets/images/characters/phoebe.png" alt="Phoebe Buffay">
+                    <h3>Phoebe Buffay</h3>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="episodes">
+            <h2 class="section-title">bölümler</h2>
+
+            <div class="select-area">
+                <select id="season-select">
+                    <option value="1" selected>sezon 1</option>
+                    <option value="2">sezon 2</option>
+                    <option value="3">sezon 3</option>
+                    <option value="4">sezon 4</option>
+                    <option value="5">sezon 5</option>
+                    <option value="6">sezon 6</option>
+                    <option value="7">sezon 7</option>
+                    <option value="8">sezon 8</option>
+                    <option value="9">sezon 9</option>
+                    <option value="10">sezon 10</option>
+                </select>
+            </div>
+
+
+            <div class="episodes-container" id="episodes-list">
+
+            </div>
+
+
+        </section>
+
+
+        <section class="favorite-scene" id="favorite-scene">
+            <h2 class="section-title">favori sahne</h2>
+            <div class="favorite-container">
+                <div class="video-area" onclick="openVideo()">
+                    <img src="assets/images/favorite-scence.jpg" alt="Pivot Sahnesi">
+                    <div class="play-button">
+                        <i class="bx bx-play"></i>
+                    </div>
+                </div>
+                <div class="scene-description">
+                    <h3>Pivot Sahnesi</h3>
+                    <p>
+                        Ross, Rachel ve Chandler'ı dar bir merdivende kocaman bir kanepeyi taşımaya zorlar. Ross sürekli
+                        "Pivot! Pivot! Pivot!" diye bağırarak yön vermeye çalışır, ancak sonunda kanepe sıkışır ve
+                        taşımak imkânsız hale gelir.
+                    </p>
+                </div>
+
+
+
+
+            </div>
+
+        </section>
+
+        <div class="video-popup" id="videoPopup">
+            <span class="close-btn" onclick="closeVideo()">&times;</span>
+            <iframe id="videoFrame" src="" allowfullscreen></iframe>
+        </div>
+    </main>
+
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-header">
+                <img src="assets/images/footer.png" alt="Footer End">
+                <h2>tasarim</h2>
+                <p>Helin Duygu Uçar</p>
+            </div>
+
+            <div class="footer-media">
+                <a href="https://github.com/HelinUcar"><i class="bx bxl-github"></i></a>
+                <a href="https://www.linkedin.com/in/helin-duygu-u%C3%A7ar-64043617b/"><i
+                        class="bx bxl-linkedin"></i></a>
+                <a href="https://www.instagram.com/helinucar09/"><i class="bx bxl-instagram"></i></a>
+            </div>
+
+        </div>
+
+    </footer>
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()"><i class='bx bx-chevron-up'></i></button>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script>
+        window.addEventListener('scroll', function () {
+            const backToTopButton = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+
+
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const seasonSelect = document.getElementById('season-select');
+            const episodesContainer = document.getElementById('episodes-list');
+
+            function fetchAndDisplayEpisodes(selectedSeason) {
+                episodesContainer.innerHTML = '';
+                fetch('assets/json/bolumler.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        const seasonData = data.friends.seasons.find(season => season.season.toString() === selectedSeason);
+                        if (seasonData) {
+                            seasonData.episodes.forEach(episode => {
+                                const episodeCard = document.createElement('div');
+                                episodeCard.classList.add('episode-card');
+                                episodeCard.setAttribute('data-season', seasonData.season);
+
+                                const episodeImg = document.createElement('img');
+                                episodeImg.classList.add('episode-img');
+                                episodeImg.src = episode.image;
+                                episodeImg.alt = seasonData.season + ". Sezon " + episode.episodeNumber + ". Bölüm görseli";
+                                episodeCard.appendChild(episodeImg);
+
+                                const cardContent = document.createElement('div');
+                                cardContent.classList.add('card-content');
+                                episodeCard.appendChild(cardContent);
+
+                                const title = document.createElement('h3');
+                                title.textContent = episode.episodeNumber + ". " + episode.episodeName;
+                                cardContent.appendChild(title);
+
+                                const desc = document.createElement('p');
+                                desc.textContent = episode.episodeDesc;
+                                cardContent.appendChild(desc);
+
+                                const likeBtn = document.createElement('button');
+                                likeBtn.classList.add('like-btn');
+                                likeBtn.dataset.id = seasonData.season + "" + episode.episodeNumber;
+                                likeBtn.innerHTML = "<i class='bx bxs-heart'></i>";
+                                episodeCard.appendChild(likeBtn);
+
+                                episodesContainer.appendChild(episodeCard);
+                            });
+                        } else {
+                            episodesContainer.innerHTML = '<p class="no-episodes">Bu sezona ait bölüm bulunamadı.</p>';
+                        }
+                    })
+                    .catch(error => console.error('Hata oluştu:', error));
+            }
+
+            fetchAndDisplayEpisodes('1');
+
+            seasonSelect.addEventListener('change', function () {
+                fetchAndDisplayEpisodes(this.value);
+            });
+
+
+        });
+
+        document.getElementById('episodes-list').addEventListener('click', function (e) {
+            const btn = e.target.closest('.like-btn');
+            if (btn) {
+                e.preventDefault();
+                const dataId = btn.getAttribute('data-id');
+                console.log("Tıklanan buton data-id:", dataId);
+                if (btn.classList.contains('liked')) {
+                    btn.classList.remove('liked');
+                }else{
+                    btn.classList.add('liked');
+                }
+            }
+        });
+
+
+
+
+        function openVideo() {
+            document.getElementById('videoPopup').classList.add('active');
+            document.getElementById('videoFrame').src = "https://www.youtube.com/embed/njgfomF51fg?autoplay=1";
+        }
+
+        function closeVideo() {
+            document.getElementById('videoPopup').classList.remove('active');
+            document.getElementById('videoFrame').src = "";
+        }
+
+
+        function toggleMenu() {
+            var overlay = document.getElementById('menu-overlay');
+            overlay.classList.toggle('open');
+        }
+    </script>
+</body>
+
+</html>

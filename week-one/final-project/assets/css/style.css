@@ -1,0 +1,701 @@
+@import url(https://db.onlinewebfonts.com/c/0b7d8a39b62b28cf0cfe3cea90b8baa3?family=Gabriel+Weiss%27+Friends+Font);
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+:root {
+  --black: #000;
+  --white: #fff;
+  --friends-font: "Gabriel Weiss' Friends Font";
+  --montserrat: "Montserrat", sans-serif;
+  --friends-red: #9a1f21;
+  --friends-blue: #5cbac4;
+  --friends-yellow: #ebc258;
+  --friends-purple: #ab99c9;
+  --friends-brown: #a85d26;
+  --friends-green: #5f8465;
+}
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--white);
+}
+
+header {
+  background-color: var(--white);
+  width: 100%;
+  font-family: "Gabriel Weiss' Friends Font";
+  z-index: 999;
+  position: fixed;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+}
+
+header .logo img {
+  width: 200px;
+}
+
+header nav .nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+header nav .nav-links a {
+  color: var(--black);
+  text-decoration: none;
+  padding: 0px 10px;
+}
+
+header nav .nav-links a:hover {
+  background-color: var(--black);
+  color: var(--friends-yellow);
+}
+
+header nav .profile-icon {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+header nav .profile-icon img {
+  width: 30px;
+  height: 30px;
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+.hamburger-menu .menu-icon {
+  width: 80px;
+  height: 60px;
+  background: url("../images/hamburger-menu.png") no-repeat center;
+  background-size: contain;
+  cursor: pointer;
+  position: relative;
+  z-index: 3;
+}
+
+.hamburger-menu .menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  pointer-events: none;
+  z-index: 998;
+}
+
+.hamburger-menu .menu {
+  width: 90vw;
+  height: 80vh;
+  background: url("../images/hamburger-menu.png") no-repeat center;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  position: relative;
+  z-index: 997;
+}
+
+.hamburger-menu .menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 10px 0;
+  transition: color 0.3s;
+  z-index: 999;
+}
+
+.hamburger-menu .menu a:hover {
+  color: var(--friends-yellow);
+}
+
+.hamburger-menu .menu-overlay.open {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: all;
+}
+
+.hamburger-menu .close-button {
+  position: absolute;
+  top: 30vh;
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--white);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.hamburger-menu .close-button:hover {
+  color: var(--friends-yellow);
+}
+
+@media (max-width: 768px) {
+  header nav .nav-links {
+    display: none;
+  }
+  .hamburger-menu {
+    display: block;
+  }
+  header nav .profile-icon {
+    display: none;
+  }
+
+  .hamburger-menu .menu a {
+    font-size: 1.2rem;
+    margin: 8px 0;
+  }
+
+  .hamburger-menu .close-button {
+    font-size: 3rem;
+    top: 25vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .hamburger-menu .menu a {
+    font-size: 1rem;
+    margin: 5px 0;
+  }
+
+  .hamburger-menu .close-button {
+    font-size: 2.5rem;
+    top: 27vh;
+  }
+}
+
+.home-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
+  text-align: left;
+  background-color: var(--white);
+}
+
+.poster-img {
+  flex: 1;
+  position: relative;
+}
+
+.poster-1 {
+  width: 100%;
+  transition: opacity 0.5s ease;
+  object-fit: contain;
+}
+
+.poster-2 {
+  width: 100%;
+  display: none;
+  transition: opacity 0.5s ease;
+  object-fit: contain;
+}
+
+.poster-detail {
+  flex: 2;
+  padding: 40px;
+}
+
+.poster-detail a {
+  font-size: 2rem;
+  color: var(--black);
+  font-family: var(--friends-font);
+  text-decoration: none;
+}
+
+.poster-detail p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--black);
+  margin-top: 10px;
+  font-family: var(--montserrat);
+}
+
+@media screen and (max-width: 768px) {
+  .home-content {
+    flex-direction: column;
+    height:100vh;
+  }
+
+  .poster-detail {
+    padding: 30px;
+  }
+
+  .poster-1 {
+    display: none;
+  }
+
+  .poster-2 {
+    display: block;
+    margin-top: 20px;
+  }
+}
+
+#characters {
+  text-align: center;
+  background-color: var(--white);
+  padding-top: 80px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: var(--black);
+  font-family: var(--friends-font);
+  margin: 20px;
+  text-align: center;
+}
+
+.charachter-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-content: center;
+  align-items: center;
+}
+
+.character-card {
+  position: relative;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.character-card:nth-child(1) {
+  background-color: var(--friends-yellow);
+} /* Rachel */
+.character-card:nth-child(2) {
+  background-color: var(--friends-blue);
+} /* Ross */
+.character-card:nth-child(3) {
+  background-color: var(--friends-red);
+} /* Monica */
+.character-card:nth-child(4) {
+  background-color: var(--friends-brown);
+} /* Chandler */
+.character-card:nth-child(5) {
+  background-color: var(--friends-green);
+} /* Joey */
+.character-card:nth-child(6) {
+  background-color: var(--friends-purple);
+} /* Phoebe */
+
+.character-card img {
+  width: 100%;
+  object-fit: contain;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.character-card h3 {
+  position: absolute;
+  bottom: 15px;
+  font-size: 1.5rem;
+  color: var(--white);
+  font-weight: bold;
+  font-family: var(--montserrat);
+}
+
+.character-card::after {
+  position: absolute;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  display: block;
+  font-size: 18px;
+  color: var(--white);
+  margin-top: 10px;
+  padding: 10px;
+  position: absolute;
+  font-family: var(--montserrat);
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+}
+
+.character-card[data-realname="Rachel"]::after {
+  content: "Dizinin başlarında konforlu bir yaşam süren, şımarık ve moda tutkunu bir genç kız olarak tanıtılan Rachel, zamanla kendi ayakları üzerinde durmayı öğrenir ve kariyerinde önemli adımlar atar.";
+}
+
+.character-card[data-realname="Ross"]::after {
+  content: "Monica’nın ağabeyi olan Ross, naif, duygusal ve zeki bir paleontologdur. Romantik ilişkilerinde yaşadığı iniş çıkışlar ve komik anlarıyla dikkat çeker.";
+}
+
+.character-card[data-realname="Monica"]::after {
+  content: "Aşçı olan Monica, titiz, düzenli ve rekabetçi yapısıyla grubun enerjik ve birleştirici üyesidir. Aile ortamını seven, neşeli ve destekleyici bir karakterdir.";
+}
+
+.character-card[data-realname="Chandler"]::after {
+  content: "Zekası ve alaycı mizahıyla tanınan Chandler, duygusal açıdan kırılgan yönleriyle de öne çıkar. Hayata farklı ve eğlenceli bir bakış açısı sunar.";
+}
+
+.character-card[data-realname="Joey"]::after {
+  content: "Oyunculuk kariyerine tutkuyla bağlı olan Joey, naif, sempatik ve cana yakın yapısıyla, “How you doin’?” ifadesiyle hafızalara kazınır.";
+}
+
+.character-card[data-realname="Phoebe"]::after {
+  content: "Sıradışı, özgür ruhlu ve bazen tuhaf davranışlarıyla öne çıkan Phoebe, geçmişindeki zorluklara rağmen içtenliği ve pozitif enerjisiyle herkesi etkiler.";
+}
+
+.character-card:hover::after {
+  opacity: 1;
+}
+
+.character-card:hover img {
+  opacity: 0.2;
+}
+
+@media screen and (max-width: 768px) {
+  .charachter-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+#episodes {
+  padding-top: 80px;
+}
+
+.select-area {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+select {
+  all: unset;
+}
+
+#season-select {
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid var(--black);
+  font-size: 1.5rem;
+  font-family: var(--montserrat);
+  color: var(--black);
+  background-color: var(--white);
+  cursor: pointer;
+  font-family: var(--friends-font);
+}
+
+#season-select:focus {
+  outline: none;
+}
+
+.episodes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.episode-card {
+  background: var(--white);
+  color: var(--black);
+  width: 300px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+  font-family: var(--montserrat);
+  text-align: left;
+}
+
+.episode-card:hover {
+  transform: scale(1.05);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.episode-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.like-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgb(256, 256, 256, 0.5);
+  border-radius: 50%;
+  border: none;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.like-btn i {
+  font-size: 20px;
+  color: #555;
+}
+
+.like-btn.liked i {
+  color: var(--friends-red);
+}
+
+.like-btn:hover i {
+  color: var(--friends-red);
+}
+
+.card-content {
+  padding: 20px;
+}
+.episode-card h3 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.episode-card p {
+  font-size: 14px;
+  color: var(--black);
+}
+
+.no-episodes {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--black);
+  font-family: var(--montserrat);
+}
+
+#favorite-scene {
+  padding-top: 80px;
+}
+
+/* Flex container: video ve açıklamanın yan yana gelmesi */
+.favorite-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.video-area {
+  position: relative;
+  flex: 1;
+  max-width: 100%;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.video-area img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.video-area .play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(154, 31, 33, 0.6);
+  color: var(--white);
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+}
+
+.scene-description {
+  flex: 1;
+  padding: 30px;
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--black);
+  border-radius: 4px;
+}
+
+.scene-description h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: var(--black);
+  font-family: var(--friends-font);
+}
+
+.scene-description p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--black);
+  margin-top: 10px;
+  font-family: var(--montserrat);
+}
+
+.video-popup {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.video-popup.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.video-popup iframe {
+  width: 80%;
+  max-width: 800px;
+  height: 450px;
+  border: none;
+}
+
+.video-popup .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2.5rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+@media screen and (max-width: 768px) {
+  .favorite-container {
+    flex-direction: column;
+  }
+  .video-popup iframe {
+    width: 100%;
+    height: 40%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .video-popup iframe {
+    width: 100%;
+    height: 30%;
+  }
+  
+}
+
+footer {
+  margin-top: 40px;
+  color: var(--white);
+  text-align: center;
+  font-size: 14px;
+  padding: 20px;
+}
+
+.footer-header {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-header img {
+  width: 250px;
+  height: auto;
+}
+
+.footer-header h2 {
+  font-size: 2.5rem;
+  margin: 10px 0;
+  color: var(--friends-purple);
+  font-family: var(--friends-font);
+}
+
+.footer-header p {
+  font-size: 1.5rem;
+  color: var(--black);
+  font-weight: bold;
+  font-family: var(--montserrat);
+}
+
+.footer-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap; 
+  padding: 1rem;
+}
+
+.footer-media a {
+  font-size: 2.2rem;
+  text-decoration: none;
+  transition: transform 0.3s;
+}
+
+
+.footer-media a:nth-child(1) { 
+  color: #333;
+}
+.footer-media a:nth-child(2) { 
+  color: #0a66c2;
+}
+.footer-media a:nth-child(3) { 
+  color: #E1306C;
+}
+.footer-media a:nth-child(4) { 
+  color: #1877f2;
+}
+
+.footer-media a:hover {
+  transform: scale(1.1);
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--friends-red);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}

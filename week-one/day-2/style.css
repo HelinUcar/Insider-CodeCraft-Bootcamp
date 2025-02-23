@@ -1,0 +1,170 @@
+/*card flip yapilacak ve arka kisminin tasarimi yapilacak*/
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+CU:wght@100&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1a1a1a;
+}
+
+.card-container {
+  width: 300px;
+  height: 200px;
+  perspective: 1000px; /*3d efektin derinligi*/
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d; /*3d efektin hem önünü hem de arkasını etkileyebilmesi için*/
+  transition: transform 0.6s;
+
+}
+
+.card-container:hover .card {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden; /*arka yüzün görünmemesi için*/
+  border-radius: 10px;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
+  color: white;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+.card-front::after,
+.card-back::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+.card-front {
+  background:linear-gradient(to right bottom, #b73150, #b33465, #ab3b79, #9d458b, #8c4f99);
+  font-family: "Courier Prime", monospace;
+}
+
+.card-back {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.card-top {
+  margin: 10px 10px 20px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bank-name {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.brand {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+}
+
+.chip img {
+  width: 40px;
+  align-self: flex-end;
+  margin-left: 10px;
+}
+
+.card-number {
+  font-size: 20px;
+  letter-spacing: 1.8px;
+  margin: 0px 0px 0px 10px;
+}
+.expiry {
+  display: flex;
+  justify-content: center;
+}
+
+.expiry span {
+  font-size: 10px;
+  opacity: 0.7;
+}
+
+.expiry p {
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+.card-holder {
+  font-size: 18px;
+  margin: 5px 10px 0px 10px;
+}
+
+.card-back {
+  background:linear-gradient(to right bottom, #b73150, #b33465, #ab3b79, #9d458b, #8c4f99);
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.bank-detail {
+  font-size: 9px;
+  display: flex;
+  justify-content: center;
+}
+
+.strip {
+  width: 100%;
+  height: 40px;
+  background: black;
+  position: absolute;
+  top: 25px;
+  left: 0;
+}
+
+.cvv {
+  width: 90%;
+  background: white;
+  color: black;
+  padding: 5px;
+  position: absolute;
+  top: 75px;
+  left: 5%;
+}
+
+.cvv p {
+  font-size: 14px;
+  text-align: end;
+}
+
+.card-detail {
+  font-size: 8px;
+  padding: 10px 15px 10px 15px;
+}
+.card-detail p {
+  margin-top: 5px;
+}
