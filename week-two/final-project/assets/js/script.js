@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const taskItem = document.createElement("li");
             taskItem.classList.add("task-item");
-            taskItem.setAttribute("data-priority", priority); // Store priority for sorting
+            taskItem.setAttribute("data-priority", priority); 
 
             let priorityClass = "";
             if (priority === "High Priority") {
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 taskItem.style.display = "block";
             }
 
-            // Sort tasks if the checkbox is checked
+
             if (sortPriority.checked) {
                 sortTasks();
             }
@@ -77,6 +77,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     taskList.addEventListener("click", function (event) {
+        event.stopPropagation();
+    
         if (event.target.classList.contains("complete-btn")) {
             event.target.parentElement.classList.toggle("completed");
             event.target.parentElement.style.backgroundColor = event.target.parentElement.classList.contains("completed") ? "lightgreen" : "white";
