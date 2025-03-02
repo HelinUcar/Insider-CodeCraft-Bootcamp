@@ -1,45 +1,42 @@
-# Kullanıcı ve Sepet İşlemleri Uygulaması
+# 🛒 Kullanıcı ve Sepet İşlemleri Uygulaması
 
-Bu proje, kullanıcı bilgilerini alan ve bir alışveriş sepeti yönetimi sağlayan basit bir JavaScript uygulamasıdır.
+Bu proje, **kullanıcı bilgilerini alarak** ve **bir alışveriş sepeti yönetimi sağlayarak** etkileşimli bir deneyim sunan basit bir JavaScript uygulamasıdır.
 
-## Özellikler
+## 📌 Özellikler
+- **Kullanıcı bilgileri**: Ad, yaş ve meslek bilgilerini alır.
+- **Sepet yönetimi**: Ürün ekleme, çıkarma ve toplam fiyat hesaplama işlemlerini içerir.
+- **Gerçek zamanlı görüntüleme**: Kullanıcı, sepetin içeriğini görüntüleyebilir.
+- **Çıkış işlemi**: "Q" harfi ile işlemi sonlandırma özelliği bulunur.
 
-- Kullanıcıdan ad, yaş ve meslek bilgilerini alır.
-- Kullanıcıya ürün ekleme, çıkarma ve toplam fiyat hesaplama işlemlerini sunar.
-- Kullanıcı sepetin içeriğini görüntüleyebilir.
-- Kullanıcı "Q" harfi ile işlemi sonlandırabilir.
+## 🎯 Kullanım
 
-## Kullanım
+### 🏠 1. Kullanıcı Bilgilerini Alma
+- Uygulama çalıştırıldığında kullanıcıdan **ad, yaş ve meslek** bilgileri istenir.
+- Geçersiz girişler durumunda kullanıcıdan **tekrar giriş yapması istenir**.
 
-### 1. Kullanıcı Bilgilerini Alma
-
-Uygulama çalıştırıldığında kullanıcıdan ad, yaş ve meslek bilgileri istenir. Geçersiz girişler tekrar sorulur.
-
-### 2. Sepet İşlemleri
-
+### 🛍️ 2. Sepet İşlemleri
 Kullanıcı aşağıdaki komutlarla sepet yönetimini gerçekleştirebilir:
+- **E**: **Sepete ürün ekler**.
+- **C**: **Sepetten ürün çıkarır**.
+- **T**: **Sepetin toplam fiyatını hesaplar**.
+- **Q**: **Sepeti görüntüler ve işlemi sonlandırır**.
 
-- **E**: Sepete ürün ekler.
-- **C**: Sepetten ürün çıkarır.
-- **T**: Sepetin toplam fiyatını hesaplar.
-- **Q**: Sepeti görüntüler ve işlemi sonlandırır.
+### ➕ 3. Ürün Ekleme
+- Kullanıcı, **ürün adı ve fiyatı girerek** ürünü sepete ekleyebilir.
+- Geçersiz girişler durumunda tekrar denemesi istenir.
 
-### 3. Ürün Ekleme
+### ➖ 4. Ürün Çıkarma
+- Kullanıcı, mevcut **sepet listesinden bir ürünü seçerek kaldırabilir**.
+- Eğer sepet boşsa kullanıcıya **uyarı mesajı gösterilir**.
 
-- Kullanıcı bir ürün adı ve fiyatı girerek ürünü sepete ekleyebilir.
-- Geçersiz girişler tekrar sorulur.
+### 💰 5. Toplam Fiyat Hesaplama
+- Sepetteki tüm ürünlerin **toplam fiyatı hesaplanarak** kullanıcıya gösterilir.
 
-### 4. Ürün Çıkarma
+### 🛒 6. Sepeti Görüntüleme
+- Kullanıcı, **sepet içeriğini** detaylı şekilde listeleyebilir.
 
-- Kullanıcı mevcut sepet listesinden bir ürün seçerek çıkarabilir.
-- Eğer sepet boşsa kullanıcıya bilgi verilir.
 
-### 5. Toplam Fiyat Hesaplama
-
-- Sepetteki tüm ürünlerin toplam fiyatı hesaplanarak kullanıcıya gösterilir.
-
-### 6. Sepeti Görüntüleme
-
-- Kullanıcı, sepetteki ürünleri listeleyebilir.
-
+## 🔗 Proje Linki
+Projenin detaylarına aşağıdaki bağlantıdan ulaşabilirsiniz:
+[📌 Proje Sayfası](https://helinucar.github.io/Insider-CodeCraft-Bootcamp/week-two/day-1/)
 
