@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ürün Listesi</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <script>
+        $(document).ready(function () {
+            const init = () => {
+                fetchProducts();
+                buildHtml();
+                buildCss();
+                setEvents();
+            };
+
+            const buildCss = () => {
+                const css = `
+                  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+        body {
+            font-family: "Montserrat", sans-serif;
+            background: #f8f9fa;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .products-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 20px;
+        }
+
+        .product-card {
+            background-color: white;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            cursor: pointer;
+        }
+
+
+
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .product-card .product-info {
+            padding: 15px;
+            text-align: left;
+        }
+
+        .product-card .product-info h5 {
+            margin: 0;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .product-card .product-info .price {
+            margin-top: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #193db0;
+            margin-bottom: 35px;
+        }
+
+        .modal-overlay {
+            margin: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .modal {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 20px;
+            width: 50%;
+            overflow: auto;
+            text-align: left;
+        }
+
+        .modal-content {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+
+        .modal-left {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-left img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .modal-right {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .modal-right h2 {
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .modal-price {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #193db0;
+            margin-bottom: 10px;
+        }
+
+        .modal-description {
+            font-size: 1rem;
+            color: #555;
+            margin: 10px 0;
+        }
+
+        .modal-actions {
+            display: flex;
+            justify-content: start;
+        }
+
+        .modal-link {
+            z-index: 10;
+            color: #193db0;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+
+        }
+
+        .close-modal {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .modal {
+                width: 90%;
+                max-width: 90%;
+                padding: 10px;
+            }
+
+            .modal-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .modal-left img {
+                max-width: 60%;
+            }
+
+            .modal-link {
+                width: 100%;
+                text-align: center;
+                padding: 10px;
+            }
+        }
+                `;
+                $('<style>').html(css).appendTo('head');
+
+
+            };
+
+            const buildHtml = () => {
+                //prevent duplicate
+                if ($('.products-container').length > 0) return;
+                const productsListHtml = `
+                <h1>Ürün Listesi</h1>
+                <div class="products-container"></div>
+                <div class="modal-overlay">
+        <div class="modal">
+            <span class="close-modal">&times;</span>
+            <div class="modal-content">
+                <div class="modal-left">
+                    <img src="" id="modal-img" alt="Ürün Görseli">
+                </div>
+                <div class="modal-right">
+                    <h2 id="modal-name"></h2>
+                    <p class="modal-price" id="modal-price"></p>
+                    <p class="modal-description" id="modal-description"></p>
+                    <div class="modal-actions">
+                        <a class="modal-link" id="modal-link" target="_blank">Siteye Git</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                `;
+
+                $("body").append(productsListHtml);
+            };
+
+            const fetchProducts = () => {
+                $.ajax({
+                    url: "products.json",
+                    method: "GET",
+                    dataType: "json",
+                    success: function (data) {
+                        renderProducts(data);
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error fetching products:", error);
+                    }
+                });
+            };
+
+            const renderProducts = (products) => {
+                //prevent duplicate
+                const container = $('.products-container');
+
+                const existingProductIds = new Set();
+                container.find('.product-card').each(function () {
+                    existingProductIds.add($(this).data('id'));
+                });
+
+                const html = products
+                    .filter(product => !existingProductIds.has(product.id))
+                    .map(product => `
+            <div class="product-card" data-id="${product.id}">
+                <div class="product-image">
+                    <img src="${product.img}" alt="${product.name}">
+                </div>
+                <div class="product-info">
+                    <h5>${product.name}</h5>
+                    <p class="price">${product.price}</p>
+                </div>
+            </div>
+        `).join('');
+
+                container.append(html);
+            };
+
+            const setEvents = () => {
+
+                $(document).on("click", ".product-card", function () {
+                    const productId = $(this).closest(".product-card").data("id");
+
+                    $.ajax({
+                        url: "products.json",
+                        method: "GET",
+                        dataType: "json",
+                        success: function (products) {
+                            const product = products.find(p => p.id == productId);
+                            if (product) {
+                                $("#modal-img").attr("src", product.img);
+                                $("#modal-name").text(product.name);
+                                $("#modal-price").text(product.price);
+                                $("#modal-description").text(product.description || "Açıklama mevcut değil.");
+                                $("#modal-link").attr("href", product.url);
+                                $(".modal-overlay").fadeIn(300);
+                            }
+                        }
+                    });
+                });
+
+                $(document).on("click", ".modal-overlay, .close-modal", function (e) {
+                    if ($(e.target).is(".modal-overlay") || $(e.target).is(".close-modal")) {
+                        $(".modal-overlay").fadeOut(300);
+                    }
+                });
+
+                $(document).on("mouseenter mouseleave", ".product-card", function (event) {
+                    if (event.type === "mouseenter") {
+                        $(this).css({
+                            "transform": "translateY(-5px)",
+                            "box-shadow": "0 6px 12px rgba(0, 0, 0, 0.15)"
+                        });
+                    } else {
+                        $(this).css({
+                            "transition": "transform 0.3s ease, box-shadow 0.3s ease",
+                            "transform": "translateY(0)",
+                            "box-shadow": "0 4px 8px rgba(0, 0, 0, 0.1)"
+                        });
+                    }
+                });
+            };
+
+
+            init();
+        });
+    </script>
+</body>
+
+</html>
