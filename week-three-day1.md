@@ -12,8 +12,8 @@ Bu proje, kullanıcıların görev ekleyip silebileceği ve tamamlanan görevler
 
 ## 📌 Kullanılan Teknolojiler
 
-- HTML5
-- CSS3
+- HTML
+- CSS
 - JavaScript (jQuery)
 
 ## 🔗 Proje Linki
