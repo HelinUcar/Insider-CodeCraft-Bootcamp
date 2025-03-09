@@ -5,9 +5,9 @@ Bu proje, **AJAX** kullanarak **JSON** dosyasından ürün bilgilerini çeken ve
 ## 🚀 Özellikler
 
 - ✅ **JSON** dosyasından ürün bilgilerini **AJAX** ile çeker.
-- 🎴 Ürünler **kart** şeklinde şık bir tasarımla ekranda gösterilir.
+- 🎴 Ürünler **kart** şeklinde ekranda gösterilir.
 - 🔗 Ürünlere ait bağlantılar, ilgili alışveriş sayfasına yönlendirir.
-- 🎨 **Modern ve duyarlı** bir kullanıcı arayüzü.
+
 
 ## 📌 Kullanılan Teknolojiler
 
