@@ -249,7 +249,7 @@ if (!cartElement || !totalElement) {
 ---
 
 ## Sonuç
-Bu doküman, alışveriş sepeti projesinde yapılan debugging işlemlerini ve kod iyileştirmelerini içermektedir. Hata ayıklama sürecinde **console.log,debugger, try-catch blokları ve hata mesajları** kullanılarak sorunlar tespit edilmiştir. Uygulama, artık daha sağlam ve hatasız çalışmaktadır.
+Bu doküman, alışveriş sepeti projesinde yapılan debugging işlemlerini ve kod iyileştirmelerini içermektedir. Hata ayıklama sürecinde **console.log, debugger, try-catch blokları ve hata mesajları** kullanılarak sorunlar tespit edilmiştir. Uygulama, artık daha sağlam ve hatasız çalışmaktadır.
 
 ---
 
