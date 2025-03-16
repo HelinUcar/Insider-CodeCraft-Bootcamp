@@ -19,7 +19,7 @@ Bu proje, **API'den kullanıcı verisi alarak**, **localStorage ile önbelleğe 
 ### 📂 2. Kullanıcıları Listeleme
 - Kullanıcılar **dinamik olarak ekrana eklenir**.
 - Her kullanıcı **kart şeklinde** gösterilir.
-- Kullanıcı bilgileri: **Ad, e-posta adresi**.
+- Kullanıcı bilgileri: **Ad, e-posta adresi, adres**.
 
 ### ❌ 3. Kullanıcı Silme
 - Kullanıcılar, **"Remove"** butonu ile kaldırılabilir.
