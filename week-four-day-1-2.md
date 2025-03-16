@@ -42,5 +42,3 @@ Bu proje, **API'den kullanıcı verisi alarak**, **localStorage ile önbelleğe 
 ## 🔗 Proje Linki
 Projenin detaylarına aşağıdaki bağlantıdan ulaşabilirsiniz:  
 [📌 Proje Sayfası](https://helinucar.github.io/Insider-CodeCraft-Bootcamp/week-four/day-1-2/)
-
-Bu projeyi geliştirmek için katkıda bulunmak isterseniz pull request gönderebilirsiniz! 🚀
