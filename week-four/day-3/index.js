@@ -16,15 +16,22 @@ class ShoppingCart {
     }
 
     addItem(productId, quantity = 1) {
+        // İyileştirme 1: Geçersiz veya negatif miktar kontrolü
+        if (isNaN(quantity) || quantity <= 0) {
+            throw new Error('Geçersiz miktar!');
+        }
         try {
             const product = products.find(p => p.id === productId);
-            
+
+            // İyileştirme 2: Ürün bulunamazsa hata mesajı göster
             if (!product) {
                 throw new Error('Ürün bulunamadı!');
             }
 
-            if (product.stock <= quantity) { // < yerine <= kullanıldı
-                throw new Error('Yetersiz stok!');
+            // Hata 1: Stok miktarı eşitse eklemeye izin verilmeli
+            if (product.stock < quantity) { // < yerine <= kullanıldı
+                // Kullanıcıya stok miktarını bildir
+                throw new Error(`Yetersiz stok! Stokta sadece ${product.stock} adet var.`);
             }
 
             const existingItem = this.items.find(item => item.productId === productId);
@@ -40,6 +47,7 @@ class ShoppingCart {
                 });
             }
 
+            // İyileştirme 3: UI güncellenmeli
             this.calculateTotal();
             this.updateUI();
 
@@ -52,7 +60,7 @@ class ShoppingCart {
     removeItem(productId) {
         try {
             const itemIndex = this.items.findIndex(item => item.productId === productId);
-            
+
             if (itemIndex === -1) {
                 throw new Error('Ürün sepette bulunamadı!');
             }
@@ -60,11 +68,18 @@ class ShoppingCart {
             const item = this.items[itemIndex];
             const product = products.find(p => p.id === productId);
 
+            // İyileştirme 2: Ürün bulunamazsa hata mesajı göster
+            if (!product) {
+                console.error('Ürün bulunamadı!');
+                return;
+            }
             if (product) {
-                product.stock += 1; // item.quantity yerine sabit değer
+                // Hata 3: Ürün sepette kaç adet varsa stok o kadar artırılmalı
+                product.stock += item.quantity; // item.quantity yerine sabit değer
             }
 
             this.items.splice(itemIndex, 1);
+            // İyileştirme 3: UI güncellenmeli
             this.calculateTotal();
             this.updateUI();
 
@@ -76,17 +91,20 @@ class ShoppingCart {
 
     calculateTotal() {
         this.total = this.items.reduce((sum, item) => {
-            return sum + item.price; // quantity çarpımı unutuldu
+            // Hata 2: Miktar da hesaplamaya dahil edilmeli
+            return sum + (item.price * item.quantity); // quantity çarpımı unutuldu
         }, 0);
 
         if (this.discountApplied && this.total > 0) {
-            this.total *= 0.1;
+            // Hata 4: Yanlış indirim düzeltildi, %10 yerine %90 uygulanıyor
+            this.total *= 0.9;
         }
     }
 
     applyDiscount(code) {
         if (code === 'INDIRIM10' && !this.discountApplied) {
             this.discountApplied = true;
+            // İyileştirme 3: UI güncellenmeli
             this.calculateTotal();
             this.updateUI();
             this.showMessage('İndirim uygulandı!');
@@ -99,7 +117,12 @@ class ShoppingCart {
     updateUI() {
         const cartElement = document.getElementById('cart');
         const totalElement = document.getElementById('total');
-        
+
+        // İyileştirme 4: UI elemanları bulunamazsa hata gösterme
+        if (!cartElement || !totalElement) {
+            console.warn('UI elemanları bulunamadı!');
+            return;
+        }
         if (cartElement && totalElement) {
             cartElement.innerHTML = this.items.map(item => `
                 <div class="cart-item">
