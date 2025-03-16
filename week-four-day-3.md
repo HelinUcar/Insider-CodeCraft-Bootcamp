@@ -231,6 +231,7 @@ if (!product) {
 
 **Düzeltilmiş Kod:**
 ```js
+this.calculateTotal();
 this.updateUI();
 ```
 
