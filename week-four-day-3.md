@@ -105,6 +105,7 @@ Chrome veya Firefox konsolunu açıp (`F12 → Console`):
 - **Hata mesajlarını** gördüm.
 - `Uncaught TypeError` gibi hatalar varsa satır numarasına bakarak hataları düzelttim.
 
+## 8. **Bulunan Hatalar ve Düzeltmeler**
 ## Hata 1: Yetersiz Stok Kontrolü
 **Hata Açıklaması:**
 Eğer stok miktarı, satın alınacak ürün miktarına **eşit** ise, ürün sepete eklenmiyor. Ancak stok miktarı ile satın alınacak ürün miktarı eşitse satın alınmaya izin verilmelidir.
@@ -119,7 +120,7 @@ if (product.stock <= quantity) {
 ### **Düzeltilmiş Kod:**
 ```js
 if (product.stock < quantity) {
-    throw new Error('Yetersiz stok!');
+    throw new Error('Yetersiz stok! Stokta sadece ${product.stock} adet var.');
 }
 ```
 
@@ -230,7 +231,6 @@ if (!product) {
 
 **Düzeltilmiş Kod:**
 ```js
-this.calculateTotal();
 this.updateUI();
 ```
 
@@ -249,7 +249,7 @@ if (!cartElement || !totalElement) {
 ---
 
 ## Sonuç
-Bu doküman, alışveriş sepeti projesinde yapılan debugging işlemlerini ve kod iyileştirmelerini içermektedir. Hata ayıklama sürecinde **console.log, try-catch blokları ve hata mesajları** kullanılarak sorunlar tespit edilmiştir. Uygulama, artık daha sağlam ve hatasız çalışmaktadır.
+Bu doküman, alışveriş sepeti projesinde yapılan debugging işlemlerini ve kod iyileştirmelerini içermektedir. Hata ayıklama sürecinde **console.log,debugger, try-catch blokları ve hata mesajları** kullanılarak sorunlar tespit edilmiştir. Uygulama, artık daha sağlam ve hatasız çalışmaktadır.
 
 ---
 
